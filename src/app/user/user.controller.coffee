@@ -31,7 +31,7 @@ angular.module 'filmlocator'
       deferred.promise
     service
 
-  .controller 'MainController', ($scope, $firebaseArray, myFactory) ->
+  .controller 'UserController', ($scope, $firebaseArray, myFactory) ->
     ref = new Firebase('https://flickering-heat-3627.firebaseio.com/')
     $scope.messages = $firebaseArray(ref)
     $scope.addFilm = (e) ->

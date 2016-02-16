@@ -1,11 +1,12 @@
-div(ng-controller="MainController" layout-xs="column")
+div(ng-controller="UserController" layout-xs="column")
     md-content
         md-toolbar(class="md-warn md-hue-2")
             div(class="md-toolbar-tools")
-                h2(hide show-gt-sm flex): span Film Locator
+                h2(hide show-gt-sm flex): span User
                 input(class="search-field" ng-model="film")
                 md-button(class="btn" ng-click="updateFilm(film)"): span(class="btn-text") Search
                 span(flex)
+    pre {{messages}}
     md-content
         md-card(layout="row" layout-sm="column" ng-show="response")
             md-card-title(layout="column" layout-align="center center")
