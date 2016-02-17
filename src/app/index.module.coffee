@@ -1,1 +1,2 @@
-angular.module 'filmlocator', ['ngRoute', 'ngMaterial', 'toastr', 'firebase']
+angular.module 'filmlocator',
+  ['ngRoute', 'ngMaterial', 'toastr', 'firebase', 'ng.deviceDetector']

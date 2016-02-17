@@ -2,11 +2,10 @@ input(class="search-field" ng-model="film")
 md-button(class="btn" ng-click="updateFilm(film)"): span(class="btn-text") Search
 span(flex)
 md-content
-    md-card(layout="row" layout-sm="column" ng-show="response")
-        md-card-title(layout="column" layout-align="center center")
-            md-card-title-media
-                a(target="_blank" href="http://www.imdb.com/title/{{result.imdbID}}/"): img(class="film-poster" src="{{result.Poster}}")
-        md-card-actions(layout="row" class="film-data" )
+    md-card(ng-show="response" class="md-block" layout-gt-sm="row")
+        div(layout="row" layout-align="center center")
+            a(target="_blank" href="http://www.imdb.com/title/{{result.imdbID}}/"): img(class="film-poster" src="{{result.Poster}}")
+        div(layout="row" class="film-data" )
             div(layout="column")
                 div(layout="row" layout-align="space-around center")
                     span(class="md-headline"): h2 {{result.Title}}

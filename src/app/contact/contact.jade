@@ -1,5 +1,6 @@
 md-content(layout-padding)
     div: form(ng-controller="ContactController" ng-submit="submit()" name="contactForm")
+        p If you want to get in contact with us, please fill the following form:
         div(layout-gt-sm="row")
             md-input-container(class="md-block" flex-gt-sm)
                 label Name
@@ -13,6 +14,4 @@ md-content(layout-padding)
                 textarea(ng-model="message" required)
         div(layout="row" layout-align="center center")
             md-input-container(class="md-block")
-                md-button(type="submit" class="md-raised md-primary") Send
-
-
+                md-button(type="submit" class="md-raised md-primary" aria-label="Send") Send
