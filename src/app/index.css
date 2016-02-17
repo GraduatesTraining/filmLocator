@@ -76,36 +76,10 @@ section.jumbotron h1 {
     width: 100px;
 }
 
-.btn {
-    padding: 0 6px 0 6px;
-    margin: 6px 8px 6px 8px;
-    min-width: 88px;
-    border-radius: 3px;
-    font-size: 14px;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    background-color: white;
+.toolbar {
+    position: fixed;
 }
 
-.btn:not([disabled]):hover {
-    background-color: bisque;
-}
-
-.btn-text {
-    color: brown;
-}
-
-.search-field {
-    color: brown;
-}
-
-.film-data {
-    margin: 2%;
-}
-
-.film-poster {
-    margin-top: 5%;
+.section {
+    padding-top: 64px;
 }

@@ -1,69 +1,64 @@
-div(ng-controller="MainController" layout-xs="column")
-    md-content
-        md-toolbar(class="md-warn md-hue-2")
-            div(class="md-toolbar-tools")
-                h2(hide show-gt-sm flex): span Film Locator
-                input(class="search-field" ng-model="film")
-                md-button(class="btn" ng-click="updateFilm(film)"): span(class="btn-text") Search
-                span(flex)
-    md-content
-        md-card(layout="row" layout-sm="column" ng-show="response")
-            md-card-title(layout="column" layout-align="center center")
-                md-card-title-media
-                    a(target="_blank" href="http://www.imdb.com/title/{{result.imdbID}}/"): img(class="film-poster" src="{{result.Poster}}")
-            md-card-actions(layout="row" class="film-data" )
-                div(layout="column")
-                    div(layout="row" layout-align="space-around center")
-                        span(class="md-headline"): h2 {{result.Title}}
-                        span(class="md-subhead"): h2 {{result.imdbRating}}
-                    div
-                        span: strong Year
-                        br
-                        span {{result.Year}}
-                    div
-                        span: strong Rated
-                        br
-                        span {{result.Rated}}
-                    div
-                        span: strong Runtime
-                        br
-                        span {{result.Runtime}}
-                    div
-                        span: strong Genre
-                        br
-                        span {{result.Genre}}
-                    div
-                        span: strong Director
-                        br
-                        span {{result.Director}}
-                    div
-                        span: strong Writer
-                        br
-                        span {{result.Writer}}
-                    div
-                        span: strong Actors
-                        br
-                        span {{result.Actors}}
-                    div
-                        span: strong Plot
-                        br
-                        span {{result.Plot}}
-                    div
-                        span: strong Language
-                        br
-                        span {{result.Language}}
-                    div
-                        span: strong Country
-                        br
-                        span {{result.Country}}
-                    div
-                        span: strong Awards
-                        br
-                        span {{result.Awards}}
+input(class="search-field" ng-model="film")
+md-button(class="btn" ng-click="updateFilm(film)"): span(class="btn-text") Search
+span(flex)
+md-content
+    md-card(layout="row" layout-sm="column" ng-show="response")
+        md-card-title(layout="column" layout-align="center center")
+            md-card-title-media
+                a(target="_blank" href="http://www.imdb.com/title/{{result.imdbID}}/"): img(class="film-poster" src="{{result.Poster}}")
+        md-card-actions(layout="row" class="film-data" )
+            div(layout="column")
+                div(layout="row" layout-align="space-around center")
+                    span(class="md-headline"): h2 {{result.Title}}
+                    span(class="md-subhead"): h2 {{result.imdbRating}}
+                div
+                    span: strong Year
+                    br
+                    span {{result.Year}}
+                div
+                    span: strong Rated
+                    br
+                    span {{result.Rated}}
+                div
+                    span: strong Runtime
+                    br
+                    span {{result.Runtime}}
+                div
+                    span: strong Genre
+                    br
+                    span {{result.Genre}}
+                div
+                    span: strong Director
+                    br
+                    span {{result.Director}}
+                div
+                    span: strong Writer
+                    br
+                    span {{result.Writer}}
+                div
+                    span: strong Actors
+                    br
+                    span {{result.Actors}}
+                div
+                    span: strong Plot
+                    br
+                    span {{result.Plot}}
+                div
+                    span: strong Language
+                    br
+                    span {{result.Language}}
+                div
+                    span: strong Country
+                    br
+                    span {{result.Country}}
+                div
+                    span: strong Awards
+                    br
+                    span {{result.Awards}}
 
 
 
-        div(layout="row" layout-sm="column" ng-hide="response")
-            span No results found!
+    div(layout="row" layout-sm="column" ng-hide="response")
+        span No results found!
 
 

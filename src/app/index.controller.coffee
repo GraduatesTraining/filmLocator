@@ -3,7 +3,7 @@ angular.module 'filmlocator'
   .factory 'myFactory', ($http, $q) ->
     service = {}
     baseUrl = 'http://www.omdbapi.com/?y=&plot=short&r=json&t='
-    _film = 'The Godfather'
+    _film = 'Deadpool'
     _finalUrl = ''
 
     makeUrl = () ->
@@ -31,7 +31,7 @@ angular.module 'filmlocator'
       deferred.promise
     service
 
-  .controller 'MainController', ($scope, $firebaseArray, myFactory) ->
+  .controller 'IndexController', ($scope, $firebaseArray, myFactory) ->
     ref = new Firebase('https://flickering-heat-3627.firebaseio.com/')
     $scope.messages = $firebaseArray(ref)
     $scope.addFilm = (e) ->
