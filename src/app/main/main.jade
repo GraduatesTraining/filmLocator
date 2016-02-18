@@ -1,15 +1,22 @@
-input(class="search-field" ng-model="film")
-md-button(class="btn" ng-click="updateFilm(film)"): span(class="btn-text") Search
-span(flex)
-md-content
+md-content(ng-controller="MainController" layout-padding)
+
+    div: form(ng-submit="updateFilm()" name="searchForm")
+        div(layout="row" layout-align="center center")
+            md-input-container(class="md-block")
+                label Film title
+                input(ng-model="film" required)
+            md-input-container(class="md-block search-button")
+                md-button(type="submit" class="md-icon-button md-raised md-primary" aria-label="Search")
+                    md-icon(class="material-icons" alt="search") search
+
     md-card(ng-show="response" class="md-block" layout-gt-sm="row")
         div(layout="row" layout-align="center center")
-            a(target="_blank" href="http://www.imdb.com/title/{{result.imdbID}}/"): img(class="film-poster" src="{{result.Poster}}")
-        div(layout="row" class="film-data" )
+            a(class="film-poster" target="_blank" href="http://www.imdb.com/title/{{result.imdbID}}/"): img(src="{{result.Poster}}" alt="{{result.title}}_poster")
+        div(layout="row" class="film-data")
             div(layout="column")
                 div(layout="row" layout-align="space-around center")
-                    span(class="md-headline"): h2 {{result.Title}}
-                    span(class="md-subhead"): h2 {{result.imdbRating}}
+                    span(class="md-headline"): h3 {{result.Title}}
+                    span(class="md-subhead"): h3 {{result.imdbRating}}
                 div
                     span: strong Year
                     br
@@ -54,8 +61,6 @@ md-content
                     span: strong Awards
                     br
                     span {{result.Awards}}
-
-
 
     div(layout="row" layout-sm="column" ng-hide="response")
         span No results found!
