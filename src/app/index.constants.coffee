@@ -1,3 +1,11 @@
-angular.module('filmlocator')
-  .constant 'malarkey', malarkey
-  .constant 'moment', moment
+(->
+  malarkey = () ->
+    malarkey
+  moment = () ->
+    moment
+
+  angular
+    .module('filmlocator')
+    .constant(malarkey)
+    .constant(moment)
+)()

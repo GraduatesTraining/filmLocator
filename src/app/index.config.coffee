@@ -1,6 +1,5 @@
-angular.module 'filmlocator'
-  .config ($logProvider, toastrConfig) ->
-    'ngInject'
+(->
+  config = ($logProvider, toastrConfig, $mdThemingProvider) ->
     # Enable log
     $logProvider.debugEnabled true
     # Set options third-party lib
@@ -9,6 +8,11 @@ angular.module 'filmlocator'
     toastrConfig.positionClass = 'toast-top-right'
     toastrConfig.preventDuplicates = true
     toastrConfig.progressBar = true
-  .config ($mdThemingProvider) ->
     $mdThemingProvider.theme('default')
       .primaryPalette('red')
+    return
+
+  angular
+    .module('filmlocator')
+    .config(config)
+)()

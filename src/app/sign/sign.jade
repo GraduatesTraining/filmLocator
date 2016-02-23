@@ -1,0 +1,49 @@
+md-dialog(aria-label="Sign" ng-cloak)
+    md-toolbar
+        div(class="md-toolbar-tools")
+            h2: span Login
+    md-content(layout-padding)
+        div(ng-show="loginForm"): form(ng-submit="login()")
+            div(layout="column")
+                md-input-container(class="md-block" flex)
+                    label Email
+                    input(type="email" ng-model="email" required)
+                md-input-container(class="md-block" flex)
+                    label Password
+                    input(type="password" ng-model="password" required)
+                div(layout="row" layout-align="center center")
+                    md-button(type="submit" class="md-icon-button md-raised md-primary" aria-label="forward")
+                        md-icon(class="material-icons" alt="forward") forward
+
+        div(ng-show="signUpForm"): form(ng-submit="login()")
+            div(layout="column")
+                md-input-container(class="md-block" flex)
+                    label Email
+                    input(type="email" ng-model="email" required)
+                md-input-container(class="md-block" flex)
+                    label Password
+                    input(type="password" ng-model="password" required)
+                md-input-container(class="md-block" flex)
+                    label Confirm password
+                    input(type="password" ng-model="passwordConfirm" name="confirmPassword" required)
+                span {{checkPass}}
+                div(layout="row" layout-align="center center")
+                    md-button(type="submit" class="md-icon-button md-raised md-primary" aria-label="forward")
+                        md-icon(class="material-icons" alt="forward") forward
+
+        div(ng-show="forgotForm"): form(ng-submit="login()")
+            div(layout="column")
+                md-input-container(class="md-block" flex)
+                    label Email
+                    input(type="email" ng-model="email" required)
+                div(layout="row" layout-align="center center")
+                    md-button(type="submit" class="md-icon-button md-raised md-primary" aria-label="forward")
+                        md-icon(class="material-icons" alt="forward") forward
+        md-divider
+
+            div(layout="row" layout-align="center center")
+                md-button(ng-click="loginForm=true; signUpForm=false; forgotForm=false; reset()" class="md-raised md-primary" aria-label="Log in") Log in
+                md-button(ng-click="loginForm=false; signUpForm=true; forgotForm=false; reset()" class="md-raised md-primary" aria-label="Sign up") Sign up
+            div(layout="row" layout-align="center center")
+                md-button(ng-click="loginForm=false; signUpForm=false; forgotForm=true; reset()" class="md-raised md-primary" aria-label="Forgot password?") Forgot password?
+

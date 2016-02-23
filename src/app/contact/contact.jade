@@ -1,17 +1,16 @@
 md-content(layout-padding)
-    div: form(ng-controller="ContactController" ng-submit="submit()" name="contactForm")
+    div: form(ng-controller="ContactController as contact" ng-submit="contact.submit()" name="contactForm")
         p If you want to get in contact with us, please fill the following form:
         div(layout-gt-sm="row")
             md-input-container(class="md-block" flex-gt-sm)
                 label Name
-                input(ng-model="name" required)
+                input(ng-model="contact.name" required)
             md-input-container(class="md-block" flex-gt-sm)
                 label Email
-                input(type="email" ng-model="email" required)
+                input(ng-model="contact.email" type="email" required)
         div(layout="row")
             md-input-container(class="md-block" flex)
                 label Message
-                textarea(ng-model="message" required)
+                textarea(ng-model="contact.message" required)
         div(layout="row" layout-align="center center")
-            md-input-container(class="md-block")
-                md-button(type="submit" class="md-raised md-primary" aria-label="Send") Send
+            md-button(type="submit" class="md-raised md-primary" aria-label="Send") Send

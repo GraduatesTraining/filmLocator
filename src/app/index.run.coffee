@@ -1,4 +1,10 @@
-angular.module 'filmlocator'
-  .run ($log) ->
-    'ngInject'
-    $log.debug 'runBlock end'
+(->
+  run = ($log) ->
+    $log
+      .debug 'runBlock end'
+    return
+
+  angular
+    .module('filmlocator')
+    .run(run)
+)()

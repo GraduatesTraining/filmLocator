@@ -25,7 +25,7 @@
     <!--[if lt IE 10]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-    <div layout="column" ng-cloak>
+    <div layout="column" ng-cloak ng-controller="IndexController as index">
         <md-toolbar md-scroll-shrink="true" class="toolbar">
             <div class="md-toolbar-tools">
                 <h2>
@@ -39,13 +39,28 @@
                 </div>
                 <div flex>
                     <md-button class="md-icon-button" href="#user/">
-                        <md-icon class="material-icons" alt="person">person</md-icon>
+                        <md-icon class="material-icons" alt="view_list">view_list</md-icon>
                     </md-button>
                 </div>
                 <div flex>
                     <md-button class="md-icon-button" href="#contact/">
                         <md-icon class="material-icons" alt="mail">mail</md-icon>
                     </md-button>
+                </div>
+                <div>
+                    <md-menu>
+                        <md-button class="md-icon-button" ng-click="index.openMenu($mdOpenMenu, $event)">
+                            <md-icon class="material-icons" alt="person">person</md-icon>
+                        </md-button>
+                        <md-menu-content width="4">
+                            <md-menu-item>
+                                <md-button ng-click="index.signDialog($event)">
+                                    <md-icon class="material-icons" md-menu-align-target alt="check">check</md-icon>
+                                    Log in
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
                 </div>
             </div>
         </md-toolbar>
